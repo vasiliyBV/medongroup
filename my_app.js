@@ -40,11 +40,14 @@ button_array.addEventListener('click', function(event) {
 	}
 });
 
-BackButton.onClick(){
+BackButton.onClick(
+	{
 	window.history.back();
 	BackButton.hide(); 	
 }
+);
 window.WebApp.ready();
+
 
 
 
