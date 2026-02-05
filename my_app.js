@@ -40,7 +40,9 @@ button_array.addEventListener('click', function(event) {
 	BackButton.show();  
 }
 	if (event.target && event.target.matches('.button_requestContact')) {
+		console.log('---------------------------');
 		console.log(window.WebApp.requestContact());
+		console.log('---------------------------');
 	}
 });
 
@@ -49,6 +51,7 @@ window.addEventListener('WebAppRequestPhone', (event) => {
 }, true);
 
 window.WebApp.ready();
+
 
 
 
