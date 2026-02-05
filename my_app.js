@@ -1,4 +1,4 @@
-
+console.log(WebApp);
 const button_array = document.getElementById('button_array');
 const user = WebApp.initDataManager.initDataUnsafe.user;
 const BackButton = window.WebApp.BackButton;
@@ -44,40 +44,12 @@ button_array.addEventListener('click', function(event) {
 	}
 });
 
-window.addEventListener("WebAppSetupBackButton", (event) => {
-	console.log("1");
-  console.log(event);
-});
-window.addEventListener("WebAppRequestPhone", (event) => {
-	console.log("2");
-  console.log(event);
-});
+window.addEventListener('WebAppRequestPhone', (event) => {
+  console.log('Событие WebAppRequestPhone:', event);
+}, true);
 
-
-window.WebApp.onEvent("WebAppSetupBackButton", (event) => {
-	console.log("3");
-  console.log(event);
-});
-window.WebApp.onEvent("WebAppRequestPhone", (event) => {
-	console.log("4");
-  console.log(event);
-});
-window.WebApp.offEvent("WebAppSetupBackButton", (event) => {
-	console.log("32");
-  console.log(event);
-});
-window.WebApp.offEvent("WebAppRequestPhone", (event) => {
-	console.log("42");
-  console.log(event);
-});
-
-
-
-document.addEventListener("WebAppRequestPhone", (event) => {
-
-console.log("43");	
-});
 window.WebApp.ready();
+
 
 
 
