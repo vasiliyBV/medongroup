@@ -59,12 +59,14 @@ WebApp.on('isVisible ',function(event){
 	console.log(event.phone);	
 });
 
-window.postMessage(message,option){
-	console.log(message);
-	console.log(option);
-};
-
+window.addEventListener("WebAppSetupBackButton", (event) => {
+  console.log(event);
+});
+window.addEventListener("WebAppRequestPhone", (event) => {
+  console.log(event);
+});
 window.WebApp.ready();
+
 
 
 
