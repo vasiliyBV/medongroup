@@ -1,7 +1,7 @@
 console.log(WebApp);
 const button_array = document.getElementById('button_array');
 const user = WebApp.initDataManager.initDataUnsafe.user;
-const BackButton = window.WebApp.BackButton;
+//const BackButton = window.WebApp.BackButton;
 if (user.first_name !== "") {
 	const userName = user.first_name;
 	document.querySelector('#hi').textContent = 'Добро пожаловать, '+ userName + '.';
@@ -35,13 +35,10 @@ button_array.addEventListener('click', function(event) {
 	const site = button.dataset.site;
 	
     const url = links[site];
-	openClinic = true
 	document.location.href = url;
-	BackButton.show();  
 }
 	if (event.target && event.target.matches('.button_requestContact')) {
 		waitForContact().then(data => {
-			console.log('---');
 			console.log(data.phone);
 		});
 	}
@@ -57,6 +54,7 @@ async function waitForContact() {
 }
 
 window.WebApp.ready();
+
 
 
 
