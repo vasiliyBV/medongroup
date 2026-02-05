@@ -59,6 +59,11 @@ WebApp.on('isVisible ',function(event){
 	console.log(event.phone);	
 });
 
+window.postMessage(message,option){
+	console.log(message);
+	console.log(option);
+};
+
 window.WebApp.ready();
 
 
