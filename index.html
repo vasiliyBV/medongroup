@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Мини‑приложение с валидацией</title>
+  <!--<script src="https://st.max.ru/js/max-web-app.js"></script>
+  -->
+  <script src="https://st.max.ru/js/max-web-app.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      color: #333;
+    }
+    .app {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      text-align: center;
+    }
+	.row_div {
+	display: inline-block;
+	width:100%;
+	}
+	#button_array {
+	display: block;
+	width:100%;
+	}
+    button {
+      margin: 5px 0;
+      padding: 12px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div id="app" class="app">
+<h1>Добро пожаловать</h1>
+<h4>Для записи выберите регион</h1>
+
+		<div id="button_array">
+			<div class="row_div">
+				<button class="button_link" data-site="Московский регион"><span class="text svelte-1koyg29">Московский регион</span></button>
+				<button class="button_link" data-site="Санкт - Петербург"><span class="text svelte-1koyg29">Санкт - Петербург</span></button>
+			</div>
+			<div class="row_div">
+				<button class="button_link" data-site="Белгород"><span class="text svelte-1koyg29">Белгород</span></button>
+				<button class="button_link" data-site="Иркутск"><span class="text svelte-1koyg29">Иркутск</span></button>
+				<button class="button_link" data-site="Красноярск"><span class="text svelte-1koyg29">Красноярск</span></button>
+			</div>
+			<div class="row_div">
+				<button class="button_link" data-site="Новосибирск"><span class="text svelte-1koyg29">Новосибирск</span></button>
+				<button class="button_link" data-site="Оренбург"><span class="text svelte-1koyg29">Оренбург</span></button>
+				<button class="button_link" data-site="Пермь"><span class="text svelte-1koyg29">Пермь</span></button>
+			</div>
+			<div class="row_div">
+				<button class="button_link" data-site="Самара"><span class="text svelte-1koyg29">Самара</span></button>
+				<button class="button_link" data-site="Севастополь"><span class="text svelte-1koyg29">Севастополь</span></button>
+				<button class="button_link" data-site="Тольятти"><span class="text svelte-1koyg29">Тольятти</span></button>
+			</div>
+			 <div class="row_div">
+				 <button class="button_link" data-site="Тюмень"><span class="text svelte-1koyg29">Тюмень</span></button>
+				 <button class="button_link" data-site="Уфа"><span class="text svelte-1koyg29">Уфа</span></button>
+				 <button class="button_link" data-site="Хабаровск"><span class="text svelte-1koyg29">Хабаровск</span></button>
+			 </div>
+			 <div class="row_div">
+				<button class="button_link" data-site="Ярославль"><span class="text svelte-1koyg29">Ярославль</span></button>
+			 </div>
+			<div class="row_div">
+				<button class="button_link" data-site=" Записаться через сайт"><span class="text svelte-1koyg29"> Записаться через сайт</span></button>
+			 </div>
+			 <div class="row_div">
+				<button class="button_requestContact" data-site="Оставить контакт для связи."><span class="text svelte-1koyg29">Оставить контакт для связи.</span> </button>
+			 </div>
+		 </div>
+</div>
+  <script src="my_app.js"></script>
+</body>
+</html>
