@@ -1,6 +1,6 @@
 
 const button_array = document.getElementById('button_array');
-console.log(WebApp.initDataManager.initDataUnsafe.user.name);
+console.log(WebApp.initDataManager.initDataUnsafe());
 const user = WebApp.initDataManager.initDataUnsafe.user;
 const BackButton = window.WebApp.BackButton;
 if (user.name !== "") {
@@ -50,6 +50,7 @@ BackButton.onClick()
 	BackButton.hide(); 	
 };
 window.WebApp.ready();
+
 
 
 
