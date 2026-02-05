@@ -1,6 +1,6 @@
 
 const button_array = document.getElementById('button_array');
-
+const BackButton_ = new BackButton();
 const Userid=11111;
 const links = {
                  
@@ -32,11 +32,13 @@ button_array.addEventListener('click', function(event) {
     const url = links[site];
 	
 	document.location.href = url;
+	BackButton_.show();  
 }
 	if (event.target && event.target.matches('.button_requestContact')) {
 		window.WebApp.requestContact();
 	}
 });
 window.WebApp.ready();
+
 
 
