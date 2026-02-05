@@ -42,12 +42,12 @@ button_array.addEventListener('click', function(event) {
 	}
 });
 
-BackButton.onClick(
+BackButton.onClick()
 	{
 	BackButton.hide(); 	
-}
-);
+};
 window.WebApp.ready();
+
 
 
 
