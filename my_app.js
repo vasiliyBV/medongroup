@@ -50,7 +50,12 @@ window.addEventListener("WebAppSetupBackButton", (event) => {
 window.addEventListener("WebAppRequestPhone", (event) => {
   console.log(event);
 });
+window.WebApp.addEventListener("message", (event) => {
+   console.log("nen");
+	console.log(event);
+});
 window.WebApp.ready();
+
 
 
 
