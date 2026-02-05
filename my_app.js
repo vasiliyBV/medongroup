@@ -1,6 +1,8 @@
 
 const button_array = document.getElementById('button_array');
 console.log(window.WebApp);
+const BackButton = window.WebApp.BackButton;
+BackButton.show();
 const Userid=11111;
 const links = {
                  
@@ -38,6 +40,7 @@ button_array.addEventListener('click', function(event) {
 	}
 });
 window.WebApp.ready();
+
 
 
 
