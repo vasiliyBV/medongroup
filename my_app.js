@@ -62,13 +62,17 @@ window.WebApp.onEvent("WebAppRequestPhone", (event) => {
 	console.log("4");
   console.log(event);
 });
-
-
-window.WebApp.onEvent("message", (event) => {
-   console.log("5");
-	console.log(event);
+window.WebApp.offEvent("WebAppSetupBackButton", (event) => {
+	console.log("32");
+  console.log(event);
 });
+window.WebApp.offEvent("WebAppRequestPhone", (event) => {
+	console.log("42");
+  console.log(event);
+});
+
 window.WebApp.ready();
+
 
 
 
