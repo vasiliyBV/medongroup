@@ -46,10 +46,21 @@ button_array.addEventListener('click', function(event) {
 
 BackButton.onClick()
 	{
-		console.log('событие нажатие кнопки')
+	console.log('событие нажатие кнопки')
 	BackButton.hide(); 	
 };
+
+WebApp.on('WebAppSetupBackButton',function(event){
+	event.isVisible = false;	
+});
+
+
+WebApp.on('isVisible ',function(event){
+	console.log(event.phone);	
+});
+
 window.WebApp.ready();
+
 
 
 
