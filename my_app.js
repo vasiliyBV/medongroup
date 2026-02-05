@@ -2,7 +2,9 @@
 const button_array = document.getElementById('button_array');
 console.log(window.WebApp);
 const BackButton = window.WebApp.BackButton;
-const Userid=11111;
+const userName = WebAppData.user.username;
+document.querySelector('#hi').textContent = 'Добро пожаловать, '+ userName + '.';
+const Userid=WebAppData.user.id;
 const links = {
                  
                 'Московский регион':'https://w.gbooking.ru/?NETWORK_ID=352&utm_source=max&referrer=https://web.max.ru/'+Userid,
@@ -47,6 +49,7 @@ BackButton.onClick(
 }
 );
 window.WebApp.ready();
+
 
 
 
