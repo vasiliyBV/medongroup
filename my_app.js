@@ -1,8 +1,12 @@
 
 const button_array = document.getElementById('button_array');
 console.log(window.WebApp);
+console.log(WebApp);
+console.log(window);
+console.log(window.WebAppData);
+console.log(WebAppData);
 const BackButton = window.WebApp.BackButton;
-const userName = window.WebAppData.user.username;
+const userName = 'test';
 document.querySelector('#hi').textContent = 'Добро пожаловать, '+ userName + '.';
 const Userid=WebAppData.user.id;
 const links = {
@@ -47,6 +51,7 @@ BackButton.onClick()
 	BackButton.hide(); 	
 };
 window.WebApp.ready();
+
 
 
 
