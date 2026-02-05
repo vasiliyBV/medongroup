@@ -1,88 +1,6 @@
 
 const button_array = document.getElementById('button_array');
 
-async function validateInitData(botToken) {
-  // 1. Получаем закодированную строку из WebAppData
-  const encodedString = window.WebApp?.InitData;
-  if (!encodedString) {
-    console.error('InitData отсутствует');
-    return false;
-  }
-
-  // 2. URL‑декодирование всей строки
-  const decoded = decodeURIComponent(encodedString);
-
-  // 3. Разбиваем на пары "ключ=значение" по &
-  const pairs = decoded.split('&');
-
-  // 4. Обрабатываем пары: формируем {key}={value}, исключаем 'hash'
-  const dataParts = [];
-  let hashFromInitData = null;
-
-  for (const pair of pairs) {
-    if (!pair) continue;
-
-    const [key, value] = pair.split('=').map(part => part || '');
-    const decodedKey = decodeURIComponent(key);
-    const decodedValue = decodeURIComponent(value);
-
-    if (decodedKey === 'hash') {
-      hashFromInitData = decodedValue;
-      continue; // пропускаем hash
-    }
-
-    dataParts.push(`{${decodedKey}}=${decodedValue}`);
-  }
-
-  // 5. Сортируем в алфавитном порядке и объединяем через \n
-  const dataCheckString = dataParts.sort().join('\n');
-
-  // 6. Создаём secret_key: HMAC-SHA256('WebAppData', botToken)
-  const secretKey = await calculateHMAC('WebAppData', botToken);
-
-  // 7. Вычисляем подпись для dataCheckString: HMAC-SHA256(secretKey, dataCheckString)
-  const calculatedHash = await calculateHMAC(dataCheckString, secretKey);
-
-  // 8. Сравниваем с hash из InitData
-  const isValid = calculatedHash === hashFromInitData;
-
-  if (isValid) {
-    console.log('Валидация успешна: данные подлинные');
-  } else {
-    console.warn('Валидация провалена: данные изменены или токен неверен');
-  }
-
-  return isValid;
-}
-
-// Вспомогательная функция: вычисляет HMAC-SHA256 и возвращает hex-строку
-async function calculateHMAC(message, key) {
-  // Кодируем ключ и сообщение в ArrayBuffer
-  const encoder = new TextEncoder();
-
-  const keyBuffer = encoder.encode(key);
-  const messageBuffer = encoder.encode(message);
-
-  // Импортируем ключ для HMAC-SHA256
-  const cryptoKey = await crypto.subtle.importKey(
-    'raw',
-    keyBuffer,
-    { name: 'HMAC', hash: 'SHA-256' },
-    false,
-    ['sign']
-  );
-
-  // Вычисляем подпись
-  const signature = await crypto.subtle.sign('HMAC', cryptoKey, messageBuffer);
-
-  // Преобразуем в hex-строку
-  const hashArray = Array.from(new Uint8Array(signature));
-  const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-
-  return hashHex;
-}
-
-
 const Userid=11111;
 const links = {
                  
@@ -113,7 +31,7 @@ button_array.addEventListener('click', function(event) {
 	
     const url = links[site];
 	
-	window.open(url,site,false)
+	document.location.href = url;
 }
 	if (event.target && event.target.matches('.button_requestContact')) {
 		window.WebApp.equestContact();
