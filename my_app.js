@@ -1,13 +1,14 @@
 
 const button_array = document.getElementById('button_array');
-console.log(WebApp.initDataManager.initDataUnsafe());
-const user = WebApp.initDataManager.initDataUnsafe.user;
+console.log(WebApp.initDataManager.initDataUnsafe);
+const Userid = "";
+//const user = WebApp.initDataManager.initDataUnsafe.user;
 const BackButton = window.WebApp.BackButton;
-if (user.name !== "") {
-	const userName = user.name;
-	document.querySelector('#hi').textContent = 'Добро пожаловать, '+ userName + '.';
-}
-const Userid = user.id;
+//if (user.name !== "") {
+//	const userName = user.name;
+//	document.querySelector('#hi').textContent = 'Добро пожаловать, '+ userName + '.';
+//}
+//const Userid = user.id;
 const links = {
                  
                 'Московский регион':'https://w.gbooking.ru/?NETWORK_ID=352&utm_source=max&referrer=https://web.max.ru/'+Userid,
@@ -50,6 +51,7 @@ BackButton.onClick()
 	BackButton.hide(); 	
 };
 window.WebApp.ready();
+
 
 
 
