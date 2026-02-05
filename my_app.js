@@ -40,9 +40,9 @@ button_array.addEventListener('click', function(event) {
 	BackButton.show();  
 }
 	if (event.target && event.target.matches('.button_requestContact')) {
-		console.log('---------------------------');
-		waitForContact();
-		console.log('---------------------------');
+		waitForContact().then(data => {
+			console.log(data);
+		});
 	}
 });
 
@@ -56,18 +56,12 @@ window.WebApp.ready();
 async function waitForContact() {
   try {
     const result = await window.WebApp.requestContact();
-    console.log('Получен ответ:', result);
     return result;
   } catch (error) {
-    console.error('Ошибка запроса:', error);
     throw error;
   }
 }
 
-// Вызов
-waitForContact().then(data => {
-  console.log(data);
-});
 
 
 
