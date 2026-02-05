@@ -1,6 +1,7 @@
 
 const button_array = document.getElementById('button_array');
 console.log(WebApp.initDataManager.initDataUnsafe);
+console.log(WebApp.initDataManager);
 const Userid = "";
 //const user = WebApp.initDataManager.initDataUnsafe.user;
 const BackButton = window.WebApp.BackButton;
@@ -51,6 +52,7 @@ BackButton.onClick()
 	BackButton.hide(); 	
 };
 window.WebApp.ready();
+
 
 
 
