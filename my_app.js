@@ -45,16 +45,31 @@ button_array.addEventListener('click', function(event) {
 });
 
 window.addEventListener("WebAppSetupBackButton", (event) => {
+	console.log("1");
   console.log(event);
 });
 window.addEventListener("WebAppRequestPhone", (event) => {
+	console.log("2");
   console.log(event);
 });
-window.WebApp.addEventListener("message", (event) => {
-   console.log("nen");
+
+
+window.WebApp.onEvent("WebAppSetupBackButton", (event) => {
+	console.log("3");
+  console.log(event);
+});
+window.WebApp.onEvent("WebAppRequestPhone", (event) => {
+	console.log("4");
+  console.log(event);
+});
+
+
+window.WebApp.onEvent("message", (event) => {
+   console.log("5");
 	console.log(event);
 });
 window.WebApp.ready();
+
 
 
 
