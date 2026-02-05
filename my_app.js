@@ -71,7 +71,14 @@ window.WebApp.offEvent("WebAppRequestPhone", (event) => {
   console.log(event);
 });
 
+
+
+document.addEventListener("WebAppRequestPhone", (event) => {
+
+console.log("43");	
+});
 window.WebApp.ready();
+
 
 
 
