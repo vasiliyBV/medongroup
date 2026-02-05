@@ -41,17 +41,11 @@ button_array.addEventListener('click', function(event) {
 }
 	if (event.target && event.target.matches('.button_requestContact')) {
 		waitForContact().then(data => {
-			console.log(data);
+			console.log('---');
+			console.log(data.phone);
 		});
 	}
 });
-
-window.addEventListener('WebAppRequestPhone', (event) => {
-  console.log('Событие WebAppRequestPhone:', event);
-}, true);
-
-window.WebApp.ready();
-
 
 async function waitForContact() {
   try {
@@ -61,6 +55,12 @@ async function waitForContact() {
     throw error;
   }
 }
+
+window.WebApp.ready();
+
+
+
+
 
 
 
