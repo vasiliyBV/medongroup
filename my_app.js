@@ -44,21 +44,6 @@ button_array.addEventListener('click', function(event) {
 	}
 });
 
-BackButton.onClick()
-	{
-	console.log('событие нажатие кнопки')
-	BackButton.hide(); 	
-};
-
-WebApp.on('WebAppSetupBackButton',function(event){
-	event.isVisible = false;	
-});
-
-
-WebApp.on('isVisible ',function(event){
-	console.log(event.phone);	
-});
-
 window.addEventListener("WebAppSetupBackButton", (event) => {
   console.log(event);
 });
@@ -66,6 +51,7 @@ window.addEventListener("WebAppRequestPhone", (event) => {
   console.log(event);
 });
 window.WebApp.ready();
+
 
 
 
