@@ -2,7 +2,6 @@
 const button_array = document.getElementById('button_array');
 console.log(window.WebApp);
 const BackButton = window.WebApp.BackButton;
-BackButton.show();
 const Userid=11111;
 const links = {
                  
@@ -32,14 +31,21 @@ button_array.addEventListener('click', function(event) {
 	const site = button.dataset.site;
 	
     const url = links[site];
-	
+	openClinic = true
 	document.location.href = url;
+	BackButton.show();  
 }
 	if (event.target && event.target.matches('.button_requestContact')) {
 		window.WebApp.requestContact();
 	}
 });
+
+BackButton.onClick(){
+	window.history.back();
+	BackButton.hide(); 	
+}
 window.WebApp.ready();
+
 
 
 
