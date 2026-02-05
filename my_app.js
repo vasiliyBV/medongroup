@@ -3,7 +3,7 @@ const button_array = document.getElementById('button_array');
 console.log(WebApp.initDataManager.initDataUnsafe.user.name);
 const user = WebApp.initDataManager.initDataUnsafe.user;
 const BackButton = window.WebApp.BackButton;
-if !(user.name == "") {
+if (user.name !== "") {
 	const userName = user.name;
 	document.querySelector('#hi').textContent = 'Добро пожаловать, '+ userName + '.';
 }
@@ -50,6 +50,7 @@ BackButton.onClick()
 	BackButton.hide(); 	
 };
 window.WebApp.ready();
+
 
 
 
