@@ -7,7 +7,7 @@ if (user.name !== "") {
 	const userName = user.name;
 	document.querySelector('#hi').textContent = 'Добро пожаловать, '+ userName + '.';
 }
-const Userid = userr.id;
+const Userid = user.id;
 const links = {
                  
                 'Московский регион':'https://w.gbooking.ru/?NETWORK_ID=352&utm_source=max&referrer=https://web.max.ru/'+Userid,
@@ -50,6 +50,7 @@ BackButton.onClick()
 	BackButton.hide(); 	
 };
 window.WebApp.ready();
+
 
 
 
