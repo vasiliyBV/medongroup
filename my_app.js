@@ -34,7 +34,7 @@ button_array.addEventListener('click', function(event) {
 	document.location.href = url;
 }
 	if (event.target && event.target.matches('.button_requestContact')) {
-		window.WebApp.equestContact();
+		window.WebApp.requestContact();
 	}
 });
 window.WebApp.ready();
