@@ -1,6 +1,6 @@
 var Userid = "";
 var userfirst_name = "";
-if ('WebApp' in window){
+if ('user' in WebApp.initDataManager.initDataUnsafe) {
 	const user = WebApp.initDataManager.initDataUnsafe.user;
 	userfirst_name = user.first_name;
 	Userid = user.id;
@@ -58,6 +58,7 @@ button_array.addEventListener('click', function(event) {
 if ('WebApp' in window){
 	window.WebApp.ready();
 }
+
 
 
 
