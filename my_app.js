@@ -1,12 +1,15 @@
-console.log(WebApp);
-const button_array = document.getElementById('button_array');
-const user = WebApp.initDataManager.initDataUnsafe.user;
-//const BackButton = window.WebApp.BackButton;
-if (user.first_name !== "") {
-	const userName = user.first_name;
-	document.querySelector('#hi').textContent = 'Добро пожаловать, '+ userName + '.';
+var Userid = "";
+var userfirst_name = "";
+if ('WebApp' in window){
+	const user = WebApp.initDataManager.initDataUnsafe.user;
+	userfirst_name = user.first_name;
+	Userid = user.id;
 }
-const Userid = user.id;
+const button_array = document.getElementById('button_array');
+//const BackButton = window.WebApp.BackButton;
+if (userfirst_name !== "") {
+	document.querySelector('#hi').textContent = 'Добро пожаловать, '+ userfirst_name + '.';
+}
 const links = {
                  
                 'Московский регион':'https://w.gbooking.ru/?NETWORK_ID=352&utm_source=max&referrer=https://web.max.ru/'+Userid,
@@ -37,23 +40,24 @@ button_array.addEventListener('click', function(event) {
     const url = links[site];
 	document.location.href = url;
 }
-	if (event.target && event.target.matches('.button_requestContact')) {
-		waitForContact().then(data => {
-			console.log(data.phone);
-		});
-	}
+	//if (event.target && event.target.matches('.button_requestContact')) {
+	//	waitForContact().then(data => {
+	//		console.log(data.phone);
+	//	});
+	//}
 });
 
-async function waitForContact() {
-  try {
-    const result = await window.WebApp.requestContact();
-    return result;
-  } catch (error) {
-    throw error;
-  }
+//async function waitForContact() {
+ // try {
+//    const result = await window.WebApp.requestContact();
+//    return result;
+//  } catch (error) {
+//    throw error;
+//  }
+//}
+if ('WebApp' in window){
+	window.WebApp.ready();
 }
-
-window.WebApp.ready();
 
 
 
